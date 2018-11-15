@@ -55,17 +55,17 @@ def get_tweets_from_candidates_search_queries(queries, twitter_api) :
     :param queries: list of string queries = liste de requêtes à utiliser avec api.search
     :param twitter_api: instance de connection
     :return liste de tweets(json)"""
-    list_tweets
+    list_tweets = []
     try :
         connexion = twitter_api
         list_tweets = []
         for query in queries :
             tweets = connexion.search(query,language="french",rpp=10)
             list_tweets.append(tweets)
-        return(liste_tweets)
-    except TweepError :
+        return(list_tweets)
+    except tweepy.TweepError :
         return("Erreur avec Twitter")
-    except RateLimitError :
+    except tweepy.RateLimitError :
         return("Atteinte taux limite de Twitter")
 
 
@@ -73,11 +73,13 @@ def main_collect() :
     """Renvoie les tweets des 2 candidats considérés
     :return liste (list) des listes (list) contenant les tweets (json) pour les 2 candidats"""
     list_num_candidate = [1,2]
-    list_file_path = ["keywords","hashtags"]
+    list_file_path = ["keywords","hashtag"]
     twitter_api = twitter_setup()
     list_tweets_candidates = []
 
     for i in list_num_candidate :
+        print(type(get_candidate_queries(i,list_file_path[0])))
+        print(type(get_candidate_queries(i,list_file_path[1])))
         list_queries = get_candidate_queries(i,list_file_path[0]) + get_candidate_queries(i,list_file_path[1])
         list_tweets_candidates.append(get_tweets_from_candidates_search_queries(list_queries,twitter_api))
 
