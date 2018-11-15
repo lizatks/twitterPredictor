@@ -20,7 +20,8 @@ def twitter_setup():
 #Avec API.Search : ne considère les tweets que des 7 derniers jours
 def collect():
     connexion = twitter_setup()
-    tweets = connexion.search("Macron",language="french",rpp=100)
+    tweets = connexion.search("Macron",language="french",rpp=10)
+    print(type(tweets))
     for tweet in tweets:
         print(tweet.text)
 

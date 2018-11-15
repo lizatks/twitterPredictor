@@ -50,3 +50,20 @@ def get_candidate_queries(num_candidate, file_path):
         return("Nom de fichier incorrect")
 
 
+def get_tweets_from_candidates_search_queries(queries, twitter_api) :
+    """Renvoie les tweets correspondants aux mots clés ou hashtags
+    :param queries: list of string queries = liste de requêtes à utiliser avec api.search
+    :param twitter_api: instance de connection
+    :return liste de tweets(json)"""
+    list_tweets
+    try :
+        connexion = twitter_api
+        list_tweets = []
+        for query in queries :
+            tweets = connexion.search(query,language="french",rpp=10)
+            list_tweets.append(tweets)
+        return(liste_tweets)
+    except TweepError :
+        return("Erreur avec Twitter")
+    except RateLimitError :
+        return("Atteinte taux limite de Twitter")
