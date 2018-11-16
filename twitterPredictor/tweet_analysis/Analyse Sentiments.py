@@ -9,8 +9,13 @@ def sentiments(text) :
     except :
         return(wiki.sentiment)
 
+hashtags = {"Macron" : "@EmmanuelMacron", "Trump" : "@realDonaldTrump"}
+
 def avis_sur_candidat(candidat) :
-    data = collect_to_pandas_dataframe("@" + candidat)
+    """Renvoie les sentiments sur un candidat en analysant les tweets lui faisant référence
+    :param candidat : (str) nom du candidat (cf dictionnaire hastags)
+    :return la moyenne de polarité et subjectivité sur les tweets faisant référence au candidat"""
+    data = collect_to_pandas_dataframe(hashtags.get(candidat))
     tweets = data['tweet_textual_content']
     n = len(tweets)
     somme_polarity = 0
