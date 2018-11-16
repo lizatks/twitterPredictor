@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8bafa53-b4cb-4b44-aa13-97adcac9b595" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/twitterPredictor/twitter_collect/store.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/twitterPredictor/twitter_collect/store.py" beforeDir="false" afterPath="$PROJECT_DIR$/twitterPredictor/twitter_collect/store.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,14 +59,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="1166" />
-          <entry key="py" value="3207" />
+          <entry key="py" value="3311" />
           <entry key="txt" value="114" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="114" />
-          <entry key="Python" value="4373" />
+          <entry key="Python" value="4477" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -101,11 +102,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/twitterPredictor/twitter_collect/store.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+            <state relative-caret-position="167">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1542278922361" expanded="true" signature="736:864" ph="..." />
+                <marker date="1542356486868" expanded="true" signature="767:906" ph="..." />
               </folding>
             </state>
           </provider>
@@ -468,11 +469,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/twitterPredictor/twitter_collect/store.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        <state relative-caret-position="167">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1542278922361" expanded="true" signature="736:864" ph="..." />
+            <marker date="1542356486868" expanded="true" signature="767:906" ph="..." />
           </folding>
         </state>
       </provider>
