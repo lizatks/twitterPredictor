@@ -41,7 +41,9 @@ def avis_sur_candidat(candidat) :
 import pandas as pd
 
 def avis_sur_candidats_dataframe(candidats) :
-    #Récupérer les données sur les différents candidats
+    """Récupérer les données sur les différents candidats
+    :param candidats : (list) liste des candidats
+    :return : Dataframe contenant des objets de la forme [candidat,neutralité du tweet]"""
     info_candidats = []
     for perso in candidats :
         data = collect_to_pandas_dataframe(hashtags.get(perso))
