@@ -103,3 +103,21 @@ def collect_to_pandas_dataframe(query):
     data['Likes']  = np.array([tweet.favorite_count for tweet in tweets])
     data['RTs']    = np.array([tweet.retweet_count for tweet in tweets])
     return data
+
+
+candidates_id = { "Macron" : 1976143068, "EP" : 1110890216, "Trump" : 25073877} #trouvés avec https://tweeterid.com/
+
+def collect_to_pandas_dataframe_user(candidate) :
+    """Créer un Dataframe à partir de 200 tweets d'un candidat
+    :param candidate : (str) chaîne de caractère contenant le nom du candidat cf le dictionnaire candidates_id
+    :return data : Dataframe contant les 200 tweets du candidat choisi"""
+    connexion = twitter_setup()
+    tweets = connexion.user_timeline(id = candidates_id.get(candidate), count = 200)
+    data = pd.DataFrame(data=[tweet.text for tweet in tweets], columns=['tweet_textual_content'])
+    data['len']  = np.array([len(tweet.text) for tweet in tweets])
+    data['ID']   = np.array([tweet.id for tweet in tweets])
+    data['Date'] = np.array([tweet.created_at for tweet in tweets])
+    data['Source'] = np.array([tweet.source for tweet in tweets])
+    data['Likes']  = np.array([tweet.favorite_count for tweet in tweets])
+    data['RTs']    = np.array([tweet.retweet_count for tweet in tweets])
+    return data

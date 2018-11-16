@@ -21,3 +21,8 @@ def extract_max_likes(query) :
     print("The tweet with more likes is: \n{}".format(data['tweet_textual_content'][like]))
     print("Number of retweets: {}".format(like_max))
     print("{} characters.\n".format(data['len'][like]))
+
+
+
+def like_candidate(query) :
+    data = collect_to_pandas_dataframe(query)
