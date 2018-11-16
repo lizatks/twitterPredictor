@@ -1,3 +1,6 @@
+from twitterPredictor.twitter_collect.collect import *
+from textblob import TextBlob
+
 def sentiments(text) :
     """renvoie les sentiments d'un texte
     :param text : (str) chaîne de caractère à analyser
@@ -33,7 +36,27 @@ def avis_sur_candidat(candidat) :
             nb_neg +=1
         else :
             nb_neutre +=1
-    print('a')
     return(somme_polarity/n, somme_subjectivity/n, nb_pos/n, nb_neg/n, nb_neutre/n)
 
+import pandas as pd
 
+def avis_sur_candidats_dataframe(candidats) :
+    #Récupérer les données sur les différents candidats
+    info_candidats = []
+    for perso in candidats :
+        data = collect_to_pandas_dataframe(hashtags.get(perso))
+        tweets = data['tweet_textual_content']
+        for tweet in tweets :
+            polarity = sentiments(tweet)[0]
+            if polarity > 0 :
+                info_candidats.append([perso,"positif"])
+            elif polarity < 0 :
+                info_candidats.append([perso,"negatif"])
+            else :
+                info_candidats.append([perso,"neutre"])
+
+    #Mettre sous format Dataframe
+    data = pd.DataFrame(data=[info[0] for info in info_candidats], columns=['Nom_candidat'])
+    data['pourcentage']  = np.array([info[1] for info in info_candidats])
+
+    return(data)
