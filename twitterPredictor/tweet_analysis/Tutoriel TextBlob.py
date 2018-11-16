@@ -11,3 +11,5 @@ print(wiki.translate(to = "EN").sentiment)
 
 wiki = TextBlob("I love chocolate")
 print(wiki.sentiment)
+
+##accéder à un des deux : fonctionnement comme liste
