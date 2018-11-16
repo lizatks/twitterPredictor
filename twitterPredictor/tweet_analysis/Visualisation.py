@@ -6,6 +6,8 @@ from twitterPredictor.twitter_collect.collect import *
 collect_to_pandas_dataframe_user("Macron")
 
 def graph_Likes_RTs(candidate) :
+    """Afficher le graphique montrant l'évolution des Likes et RTs des tweets d'un candidat en fonction du temps
+    :param candidate : (str) nom du candidat"""
     data = collect_to_pandas_dataframe_user(candidate)
 
     tfav = pd.Series(data['Likes'].values, index=data['Date'])
